@@ -1,0 +1,99 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-container {
+    display: block;
+    margin: 50px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Centre les cartes inline-block */
+}
+
+.back-arrow {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #333;
+}
+
+.option-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.options {
+    text-align: center; /* Centre les cartes */
+}
+
+.option-card {
+    display: inline-block; /* Affiche les cartes en ligne */
+    margin: 10px;
+    padding: 20px 40px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-width: 150px;
+    text-align: center;
+    width: 500px;
+}
+
+.option-card:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.option-card .icon {
+    display: block;
+    margin: 0 auto 10px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Couleurs différentes pour chaque rôle */
+.option-card.client {
+    background-color: #4CAF50; /* vert */
+    color: white;
+}
+
+.option-card.fournisseur {
+    background-color: #FF9800; /* orange */
+    color: white;
+}
+
+.option-card.livreur {
+    background-color: #2196F3; /* bleu */
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .option-card {
+        padding: 15px 25px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .option-card {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+}

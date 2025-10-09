@@ -32,7 +32,7 @@ export default function Header() {
         {/* Right side buttons */}
         <div className="header-right">
           <Link><button className="btn">Se Connecter</button></Link>
-          <Link><button className="btn">S'Inscrire</button></Link>
+          <Link to="/inscription"><button className="btn">S'Inscrire</button></Link>
           <span className="btn">|</span>
           <Link><button className="btn">Commandes</button></Link>
           <Link><button className="btn">Mon Compte</button></Link>
