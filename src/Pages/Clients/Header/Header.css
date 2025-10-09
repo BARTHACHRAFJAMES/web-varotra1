@@ -1,0 +1,238 @@
+/* ----- HEADER GENERAL ----- */
+.header {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .header-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #0070e0;
+  }
+  
+  /* ----- LOGO ----- */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  .header-logo h2 {
+    margin: 0;
+  }
+  
+  .header-logo span {
+    background: #0070e0;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 6px;
+    margin-left: 5px;
+    font-size: 13px;
+  }
+  
+  /* ----- SEARCH BAR ----- */
+  .header-search {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+  }
+  
+  .header-search input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .header-search button {
+    background: #005bb5;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .header-search button:hover {
+    background: #031a31;
+  }
+  
+  /* Right buttons */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .header-right button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .header-right button:hover {
+    color: #0070e0;
+  }
+  
+  /* Cart button */
+  .cart-btn {
+    position: relative;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 50%;
+  }
+
+  #icons-recherche{
+    display: none;
+  }
+  
+  /* ----- MENU BUTTON (MOBILE) ----- */
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* ----- MOBILE MENU ----- */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .mobile-menu.open {
+    left: 0;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+  }
+  
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .mobile-bottom {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .close-btn{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  #logo{
+    height: 100px;
+    border-bottom: 1px solid gray;
+    width: 100%;align-items: center;
+    justify-content: center;
+  }
+  .list{
+    overflow-y: auto;
+    max-height: 83%;
+  }
+  .list li a{
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .login-btn,
+  .register-btn {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  .login-btn {
+    background: #0070e0;
+    color: white;
+  }
+  
+  .register-btn {
+    background: #f2f2f2;
+    color: #0070e0;
+  }
+  
+  /* ----- RESPONSIVE DESIGN ----- */
+  @media (max-width: 900px) {
+    .header-search {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+      margin-top: 6px;
+    }
+    .header-footer{
+        display: none;
+    }
+    
+    .btn{
+        display: none;
+    }
+
+    #icons-recherche{
+        display: contents;
+    }
+  
+    .header-icons {
+      gap: 10px;
+    }
+  }
+  
