@@ -318,6 +318,10 @@
     .header-search {
       display: none;
     }
+
+    .heart{
+    display: none;
+  }
   
     .menu-btn {
       display: block;
