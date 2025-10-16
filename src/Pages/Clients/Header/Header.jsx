@@ -88,7 +88,7 @@ export default function Header() {
                 <Search size={20} />
               </button>
             </Link>
-            <Link>
+            <Link className="heart">
               <button className="cart-btn">
                 <Heart size={20} color="red" />
               </button>
