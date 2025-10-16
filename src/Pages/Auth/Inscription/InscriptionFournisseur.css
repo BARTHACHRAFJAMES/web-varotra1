@@ -19,10 +19,25 @@
     margin-bottom: 30px;
     color: #333;
   }
+  .control-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* espace entre les champs */
+    width: 100%;
+    flex-wrap: nowrap; /* garde les champs sur une ligne */
+  }
   
+  .control-div .input-group {
+    flex: 1; /* chaque champ prend la même largeur */
+    min-width: 0; /* évite les débordements */
+  }
+  
+  /* Style général des inputs */
   .input-group {
     position: relative;
     margin-bottom: 20px;
+    width: 100%;
   }
   
   .input-group .icon {
@@ -36,13 +51,14 @@
   }
   
   .input-group input {
-    width: 85%;
+    width: 100%;
     padding: 12px 12px 12px 40px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 14px;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
   }
   
   .input-group input:focus {
@@ -65,12 +81,55 @@
   .submit-btn:hover {
     background-color: #3b5b7b;
   }
+  .success-msg {
+    color: green;
+    background-color: #e9fbe9;
+    border: 1px solid #8fd88f;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .error-msg {
+    color: #c0392b;
+    background-color: #fdecea;
+    border: 1px solid #e6a7a1;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 13px;
+  }
+  
 
   .global-message {
     text-align: center;
     margin-bottom: 10px;
     font-weight: 500;
   }
+
+  .global-message {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 13px;
+  }
+  
+  .success-text {
+    color: green;
+    font-size: 13px;
+  }
+  
+  .password-text {
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  
   
   .success-text {
     color: green;
@@ -97,7 +156,6 @@
     }
   }
   
-  
 
    /* ----- RESPONSIVE DESIGN ----- */
    @media (max-width: 700px) {
@@ -116,4 +174,5 @@
       font-size: 12px;
     }
    }
+   
   

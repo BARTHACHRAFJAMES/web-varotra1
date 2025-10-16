@@ -1,0 +1,245 @@
+/* =============================
+   STRUCTURE GÉNÉRALE
+============================= */
+.content {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(243, 243, 237);
+  margin-top: 100px;
+}
+
+.sousContant {
+  width: 70%;
+}
+
+/* =============================
+    CATÉGORIES PRINCIPALES
+============================= */
+.CategorieList {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  background-color: rgba(24, 134, 245, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.CategorieList::-webkit-scrollbar {
+  display: none;
+}
+
+.categorie-card {
+  min-width: 120px;
+  text-align: center;
+  flex-shrink: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.categorie-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.categorie-name {
+  padding: 8px;
+  font-weight: 500;
+  color: white;
+}
+
+/* =============================
+  SOUS-CATÉGORIES
+============================= */
+.sousCategorie-avec-produit {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
+.sousCat-prod {
+  padding: 10px;
+}
+
+.sousCat-prod h3 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.sousCat-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+/* =============================
+   PRODUITS
+============================= */
+.produitList {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.produitList::-webkit-scrollbar {
+  display: none;
+}
+
+.produit-card {
+  min-width: 200px;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-bottom: 10px;
+  transition: transform 0.2s ease;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.produit-card:hover {
+  transform: scale(1.05);
+}
+
+.produit-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.produit-nom {
+  font-weight: 500;
+  display: block;
+  margin-top: 8px;
+}
+
+.produit-stock {
+  color: gray;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.no-product {
+  color: #999;
+  font-style: italic;
+  padding: 10px;
+}
+
+
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.scroll-btn:hover {
+  background-color: white;
+}
+
+/*Boutons un peu plus à l’intérieur */
+.scroll-btn.left {
+  left: 5px; /* avant : -15px */
+}
+
+.scroll-btn.right {
+  right: 5px; /* avant : -15px */
+}
+
+/* Pour petit écran, cacher les boutons */
+/* @media (max-width: 768px) {
+  .scroll-btn {
+    display: none;
+  }
+} */
+
+
+/* =============================
+   📱 RESPONSIVE DESIGN
+============================= */
+@media (max-width: 900px) {
+  .content {
+    padding: 0;
+  }
+  .sousContant {
+    width: 100%;
+  }
+
+  .CategorieList {
+    padding: 5px;
+    border-radius: 0;
+  }
+
+  .categorie-card {
+    min-width: 100px;
+  }
+
+  .categorie-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .categorie-name {
+    font-size: 14px;
+  }
+
+  .sousCat-image {
+    height: 150px;
+  }
+
+  .produit-card {
+    min-width: 120px;
+    width: 160px;
+  }
+
+  .produit-image {
+    height: 150px;
+  }
+
+  .produit-nom {
+    font-size: 12px;
+  }
+
+  .produit-stock {
+    font-size: 11px;
+  }
+}
+
+/* =============================
+    ÉTATS & CHARGEMENT
+============================= */
+.loading-text {
+  color: gray;
+  text-align: center;
+  font-style: italic;
+}

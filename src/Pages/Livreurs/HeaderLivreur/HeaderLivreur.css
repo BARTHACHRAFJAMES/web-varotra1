@@ -1,19 +1,18 @@
 /* ----- HEADER GENERAL ----- */
- .header {
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 1000;
-    position: fixed;         /* ✅ fixe le header */
-    top: 0;                  /* colle en haut */
-    left: 0;
-  }
+.header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000;
+  position: fixed;         /* ✅ fixe le header */
+  top: 0;                  /* colle en haut */
+  left: 0;
+}
 
-  .header.scrolled {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
+.header.scrolled {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
   
   .header-top {
     display: flex;
@@ -21,7 +20,6 @@
     justify-content: space-around;
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
-    
   }
 
   .header-footer{
@@ -218,8 +216,7 @@
     color: #0070e0;
   }
 
-
-  /* =================== MODAL DE CONFIRMATION =================== */
+/* =================== MODAL DE CONFIRMATION =================== */
 .modal-overlay {
   position: fixed;
   inset: 0; /* remplace top, left, width, height pour plus de précision */
@@ -308,13 +305,11 @@
     width: 100%;
   }
 }
-  
+
+
   
   /* ----- RESPONSIVE DESIGN ----- */
   @media (max-width: 900px) {
-    .header-top{
-      height: 64px;
-    }
     .header-search {
       display: none;
     }
@@ -341,7 +336,6 @@
     .header-icons {
       gap: 10px;
     }
-
     .modal-content {
       max-width: 90%;
       padding: 20px 15px;

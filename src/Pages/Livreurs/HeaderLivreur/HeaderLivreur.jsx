@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from "react";
-import "./Header.css";
-import { ShoppingCart, Heart, Menu, X, Search } from "lucide-react";
+import React, { useState } from "react";
+import { Bell, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import "./HeaderLivreur.css";
 
-
-export default function Header() {
+export default function HeaderLivreur() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
-  //Récupération du client et du token depuis localStorage
-  const client = JSON.parse(localStorage.getItem("client"));
+  // Récupération du livreur et du token depuis localStorage
+  const livreur = JSON.parse(localStorage.getItem("livreur"));
   const token = localStorage.getItem("token");
 
-  //Fonction de déconnexion
+  // Fonction finale de déconnexion
   const confirmLogout = () => {
-    localStorage.removeItem("client");
+    localStorage.removeItem("livreur");
     localStorage.removeItem("token");
     setShowDialog(false);
-    navigate("/"); // redirige vers la page d'accueil ou de connexion
+    navigate("/connexion");
   };
 
   useEffect(() => {
@@ -36,23 +34,22 @@ export default function Header() {
           <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-  
+
           {/* Logo */}
           <div className="header-logo">
             <h2>Nir'Shop</h2>
             <span>com</span>
           </div>
-  
+
           {/* Right side buttons */}
           <div className="header-right">
-            {client && token ? (
+            {livreur && token ? (
               <>
-                {/*  Bouton de profil */}
                 <Link to="/mon-compte">
-                  <button className="btn">Bonjour {client.nom}</button>
+                  <button className="btn">Bonjour {livreur.nomLivreur}</button>
                 </Link>
-  
-                {/* Bouton déconnexion */}
+
+                {/* Bouton déconnexion → affiche la boîte de confirmation */}
                 <button
                   onClick={() => setShowDialog(true)}
                   className="btn-logout"
@@ -68,48 +65,28 @@ export default function Header() {
                   Se déconnecter
                 </button>
               </>
-            ) : (
-              <>
-                {/*Boutons de connexion/inscription */}
-                <Link to="/connexion">
-                  <button className="btn">Se Connecter</button>
-                </Link>
-                <Link to="/inscription">
-                  <button className="btn">S'inscrire</button>
-                </Link>
-              </>
-            )}
-  
+            ) : null}
+
             <span className="btn">|</span>
-            <Link><button className="btn">Commandes</button></Link>
-            <Link><button className="btn">Mon Compte</button></Link>
-            <Link>
-              <button id="icons-recherche" className="cart-btn">
-                <Search size={20} />
-              </button>
-            </Link>
             <Link>
               <button className="cart-btn">
-                <Heart size={20} color="red" />
-              </button>
-            </Link>
-            <Link>
-              <button className="cart-btn">
-                <ShoppingCart size={20} />
+                <Bell size={20} />
                 <span className="cart-count">0</span>
               </button>
             </Link>
+            <Link>
+              <button className="btn">Mon Compte</button>
+            </Link>
           </div>
         </div>
-  
+
         {/* Barre de recherche */}
         <div className="header-footer">
           <div className="header-search">
-            <input type="text" placeholder="Rechercher catégories, brands..." />
-            <button>Rechercher</button>
+            <h1 style={{ color: "white", textAlign: "center" }}>Livreur</h1>
           </div>
         </div>
-  
+
         {/* Menu mobile */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <div>
@@ -120,49 +97,46 @@ export default function Header() {
               <h2>Nir'Shop</h2>
               <span>com</span>
             </div>
-  
+
             <ul className="list">
               <li><Link>Accueil</Link></li>
-              <li><Link>Achat par catégories</Link></li>
-              <li><Link>Commandes</Link></li>
+              <li><Link>Mes courses du jour</Link></li>
               <li><Link>Mon Compte</Link></li>
               <li><Link>Centre d'aide</Link></li>
             </ul>
           </div>
-  
+
           <div className="mobile-bottom">
-            {client && token ? (
+            {livreur && token ? (
               <>
-                <p style={{textAlign: "center"}}>Bonjour <span>{client.nom}</span></p>
+                <p style={{ textAlign: "center" }}>
+                  Bonjour <span>{livreur.nomLivreur}</span>
+                </p>
                 <button
                   onClick={() => setShowDialog(true)}
                   className="register-btn"
-                  style={{ backgroundColor: "red", color: "white", borderRadius: "20px", border: "none" }}
+                  style={{
+                    backgroundColor: "red",
+                    color: "white",
+                    borderRadius: "20px",
+                    border: "none",
+                  }}
                 >
                   Se déconnecter
                 </button>
               </>
-            ) : (
-              <>
-                <Link to="/connexion" className="login-btn" style={{ color: "white" }}>
-                  Se Connecter
-                </Link>
-                <Link to="/inscription" className="register-btn">
-                  S'inscrire
-                </Link>
-              </>
-            )}
+            ) : null}
           </div>
         </div>
       </header>
-  
-       {/* MODAL DE CONFIRMATION */}
-       {showDialog && (
+
+      {/* MODAL DE CONFIRMATION */}
+      {showDialog && (
         <div className="modal-overlay">
           <div className="modal-content">
             <h3>Confirmation</h3>
             <p>Voulez-vous vraiment vous déconnecter ?</p>
-  
+
             <div className="modal-buttons">
               <button
                 className="btn-cancel"
@@ -177,6 +151,6 @@ export default function Header() {
           </div>
         </div>
       )}
-  </>
+    </>
   );
 }

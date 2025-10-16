@@ -12,6 +12,7 @@
     border-radius: 12px;
     width: 100%;
     max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
   .inscription-form h2 {
@@ -35,14 +36,16 @@
     height: 20px;
   }
   
+  /* ✅ Correction ici */
   .input-group input {
-    width: 85%;
+    width: 100%; /* au lieu de 85% */
     padding: 12px 12px 12px 40px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 14px;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
   }
   
   .input-group input:focus {
@@ -65,12 +68,26 @@
   .submit-btn:hover {
     background-color: #3b5b7b;
   }
-
+  
   .global-message {
     text-align: center;
     margin-bottom: 10px;
     font-weight: 500;
   }
+
+  .back-arrow {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.back-arrow:hover {
+    color: #333;
+}
   
   .success-text {
     color: green;
@@ -79,7 +96,7 @@
   .error-text {
     color: red;
   }
-
+  
   .submit-btn[disabled] {
     opacity: 0.7;
     cursor: not-allowed;
@@ -97,10 +114,8 @@
     }
   }
   
-  
-
-   /* ----- RESPONSIVE DESIGN ----- */
-   @media (max-width: 700px) {
+  /* ----- Responsive Design ----- */
+  @media (max-width: 900px) {
     .inscription-form {
       background-color: transparent;
       width: 100%;
@@ -115,5 +130,5 @@
     .login-link {
       font-size: 12px;
     }
-   }
+  }
   
